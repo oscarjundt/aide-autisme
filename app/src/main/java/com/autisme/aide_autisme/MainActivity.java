@@ -1,4 +1,4 @@
-package com.example.aide_autisme;
+package com.autisme.aide_autisme;
 
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +14,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.aide_autisme.databinding.ActivityMainBinding;
+import com.autisme.aide_autisme.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 

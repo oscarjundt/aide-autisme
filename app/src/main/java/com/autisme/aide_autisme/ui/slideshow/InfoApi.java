@@ -1,4 +1,4 @@
-package com.example.aide_autisme.ui.slideshow;
+package com.autisme.aide_autisme.ui.slideshow;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -6,14 +6,11 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.example.aide_autisme.R;
-import com.example.aide_autisme.TraitementHttp;
-import com.example.aide_autisme.ui.gallery.GalleryFragment;
-import com.example.aide_autisme.ui.gallery.Urlv;
+import com.autisme.aide_autisme.R;
+import com.autisme.aide_autisme.TraitementHttp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aide_autisme"
+    namespace = "com.autisme.aide_autisme"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.aide_autisme"
+        applicationId = "com.autisme.aide_autisme"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

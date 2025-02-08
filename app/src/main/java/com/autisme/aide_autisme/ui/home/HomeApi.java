@@ -1,8 +1,6 @@
-package com.example.aide_autisme.ui.home;
+package com.autisme.aide_autisme.ui.home;
 
 import android.os.AsyncTask;
-
-import androidx.fragment.app.Fragment;
 
 public class HomeApi extends AsyncTask<String, String, String> {
     private String urlApi;

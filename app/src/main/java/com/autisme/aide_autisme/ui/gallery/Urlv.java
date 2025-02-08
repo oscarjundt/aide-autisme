@@ -1,12 +1,14 @@
-package com.example.aide_autisme.ui.slideshow;
+package com.autisme.aide_autisme.ui.gallery;
 
-public class Urlf {
+public class Urlv {
+
     private long id;
 
     private String url;
 
     private String titre;
 
+    private String descp;
 
     public long getId() {
         return id;
@@ -30,5 +32,13 @@ public class Urlf {
 
     public void setTitre(String titre) {
         this.titre = titre;
+    }
+
+    public String getDescp() {
+        return descp;
+    }
+
+    public void setDescp(String descp) {
+        this.descp = descp;
     }
 }

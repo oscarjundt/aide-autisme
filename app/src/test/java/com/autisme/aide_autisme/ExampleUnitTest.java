@@ -1,4 +1,4 @@
-package com.example.aide_autisme;
+package com.autisme.aide_autisme;
 
 import org.junit.Test;
 

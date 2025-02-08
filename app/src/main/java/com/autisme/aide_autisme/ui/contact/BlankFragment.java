@@ -1,18 +1,17 @@
-package com.example.aide_autisme.ui.contact;
+package com.autisme.aide_autisme.ui.contact;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.aide_autisme.R;
-import com.example.aide_autisme.databinding.FragmentBlankBinding;
+import com.autisme.aide_autisme.R;
+import com.autisme.aide_autisme.databinding.FragmentBlankBinding;
 
 public class BlankFragment extends Fragment {
 

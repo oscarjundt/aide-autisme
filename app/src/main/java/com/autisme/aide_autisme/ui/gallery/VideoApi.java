@@ -1,34 +1,28 @@
-package com.example.aide_autisme.ui.contact;
+package com.autisme.aide_autisme.ui.gallery;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.example.aide_autisme.R;
-import com.example.aide_autisme.TraitementHttp;
+import com.autisme.aide_autisme.R;
+import com.autisme.aide_autisme.TraitementHttp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.Collections;
 import java.util.List;
 
-public class ContactApi extends AsyncTask<String,String,String> {
+public class VideoApi  extends AsyncTask<String,String,String> {
     private String url;
-    private BlankFragment fragment;
+    private GalleryFragment fragment;
     private ProgressDialog progressDialog;
 
-    public ContactApi(String url, BlankFragment fragment){
+    public VideoApi(String url,GalleryFragment fragment){
         this.url = url;
         this.fragment = fragment;
     }
@@ -52,21 +46,21 @@ public class ContactApi extends AsyncTask<String,String,String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         Gson gson = new Gson();
-        Type listType = new TypeToken<List<Lien>>(){}.getType();
-        List<Lien> liens = gson.fromJson(s, listType);
-        LinearLayout text = fragment.getActivity().findViewById(R.id.Lcontact);
-        for(Lien lien: liens){
-            Button tableRow = getTableRow(lien);
+        Type listType = new TypeToken<List<Urlv>>(){}.getType();
+        List<Urlv> urlvs = gson.fromJson(s, listType);
+        LinearLayout text = fragment.getActivity().findViewById(R.id.Lvideo);
+        for(Urlv urlv: urlvs){
+            Button tableRow = getTableRow(urlv);
             text.addView(tableRow);
         }
         this.progressDialog.hide();
     }
 
-    private @NonNull Button getTableRow(Lien lien) {
+    private @NonNull Button getTableRow(Urlv urlv) {
         Button button = new Button(this.fragment.getContext());
-        button.setText(lien.getTitre());
+        button.setText(urlv.getTitre());
         button.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(lien.getUrl()));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlv.getUrl()));
             v.getContext().startActivity(browserIntent);
         });
         return button;
@@ -80,12 +74,11 @@ public class ContactApi extends AsyncTask<String,String,String> {
         this.url = url;
     }
 
-    public BlankFragment getFragment() {
+    public GalleryFragment getFragment() {
         return fragment;
     }
 
-    public void setFragment(BlankFragment fragment) {
+    public void setFragment(GalleryFragment fragment) {
         this.fragment = fragment;
     }
 }
-

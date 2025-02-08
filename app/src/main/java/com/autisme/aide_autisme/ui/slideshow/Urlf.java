@@ -1,13 +1,11 @@
-package com.example.aide_autisme.ui.contact;
+package com.autisme.aide_autisme.ui.slideshow;
 
-public class Lien {
+public class Urlf {
     private long id;
 
     private String url;
 
     private String titre;
-
-    private String type;
 
 
     public long getId() {
@@ -32,13 +30,5 @@ public class Lien {
 
     public void setTitre(String titre) {
         this.titre = titre;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.aide_autisme.ui.home;
+package com.autisme.aide_autisme.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,9 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.aide_autisme.databinding.FragmentHomeBinding;
+import com.autisme.aide_autisme.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
