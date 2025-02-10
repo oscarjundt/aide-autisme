@@ -1,14 +1,12 @@
-package com.autisme.aide_autisme.ui.gallery;
+package com.autisme.aide_autisme.ui.info;
 
-public class Urlv {
-
+public class Urlf {
     private long id;
 
     private String url;
 
     private String titre;
 
-    private String descp;
 
     public long getId() {
         return id;
@@ -32,13 +30,5 @@ public class Urlv {
 
     public void setTitre(String titre) {
         this.titre = titre;
-    }
-
-    public String getDescp() {
-        return descp;
-    }
-
-    public void setDescp(String descp) {
-        this.descp = descp;
     }
 }

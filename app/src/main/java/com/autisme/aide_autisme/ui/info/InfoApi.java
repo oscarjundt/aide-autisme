@@ -1,4 +1,4 @@
-package com.autisme.aide_autisme.ui.slideshow;
+package com.autisme.aide_autisme.ui.info;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,10 +19,10 @@ import java.util.List;
 
 public class InfoApi extends AsyncTask<String,String,String> {
     private String url;
-    private SlideshowFragment fragment;
+    private InfoFragment fragment;
     private ProgressDialog progressDialog;
 
-    public InfoApi(String url,SlideshowFragment fragment){
+    public InfoApi(String url, InfoFragment fragment){
         this.url = url;
         this.fragment = fragment;
     }
@@ -74,11 +74,11 @@ public class InfoApi extends AsyncTask<String,String,String> {
         this.url = url;
     }
 
-    public SlideshowFragment getFragment() {
+    public InfoFragment getFragment() {
         return fragment;
     }
 
-    public void setFragment(SlideshowFragment fragment) {
+    public void setFragment(InfoFragment fragment) {
         this.fragment = fragment;
     }
 }
