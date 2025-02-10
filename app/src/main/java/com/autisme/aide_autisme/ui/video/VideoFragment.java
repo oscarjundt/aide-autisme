@@ -1,4 +1,4 @@
-package com.autisme.aide_autisme.ui.slideshow;
+package com.autisme.aide_autisme.ui.video;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,19 +9,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.autisme.aide_autisme.R;
-import com.autisme.aide_autisme.databinding.FragmentSlideshowBinding;
+import com.autisme.aide_autisme.databinding.FragmentVideoBinding;
 
-public class SlideshowFragment extends Fragment {
+public class VideoFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentVideoBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentVideoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        InfoApi infoApi = new InfoApi(getString(R.string.url)+"/api/infos",this);
-        infoApi.execute();
+        VideoApi videoApi = new VideoApi(getString(R.string.url)+"/api/videos",this);
+        videoApi.execute();
         return root;
     }
 

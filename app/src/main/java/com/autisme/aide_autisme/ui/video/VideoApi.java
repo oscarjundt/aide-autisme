@@ -1,4 +1,4 @@
-package com.autisme.aide_autisme.ui.gallery;
+package com.autisme.aide_autisme.ui.video;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,10 +19,10 @@ import java.util.List;
 
 public class VideoApi  extends AsyncTask<String,String,String> {
     private String url;
-    private GalleryFragment fragment;
+    private VideoFragment fragment;
     private ProgressDialog progressDialog;
 
-    public VideoApi(String url,GalleryFragment fragment){
+    public VideoApi(String url, VideoFragment fragment){
         this.url = url;
         this.fragment = fragment;
     }
@@ -74,11 +74,11 @@ public class VideoApi  extends AsyncTask<String,String,String> {
         this.url = url;
     }
 
-    public GalleryFragment getFragment() {
+    public VideoFragment getFragment() {
         return fragment;
     }
 
-    public void setFragment(GalleryFragment fragment) {
+    public void setFragment(VideoFragment fragment) {
         this.fragment = fragment;
     }
 }

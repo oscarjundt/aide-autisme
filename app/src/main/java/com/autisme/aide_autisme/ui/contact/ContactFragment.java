@@ -11,17 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.autisme.aide_autisme.R;
-import com.autisme.aide_autisme.databinding.FragmentBlankBinding;
+import com.autisme.aide_autisme.databinding.FragmentContactBinding;
 
-public class BlankFragment extends Fragment {
+public class ContactFragment extends Fragment {
 
-    private FragmentBlankBinding binding;
+    private FragmentContactBinding binding;
 
 
     @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentBlankBinding.inflate(inflater, container, false);
+        binding = FragmentContactBinding.inflate(inflater, container, false);
         ContactApi infoApi = new ContactApi(getString(R.string.url)+"/api/liens",this);
         infoApi.execute();
         return binding.getRoot();

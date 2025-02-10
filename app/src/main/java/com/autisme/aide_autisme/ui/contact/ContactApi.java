@@ -19,10 +19,10 @@ import java.util.List;
 
 public class ContactApi extends AsyncTask<String,String,String> {
     private String url;
-    private BlankFragment fragment;
+    private ContactFragment fragment;
     private ProgressDialog progressDialog;
 
-    public ContactApi(String url, BlankFragment fragment){
+    public ContactApi(String url, ContactFragment fragment){
         this.url = url;
         this.fragment = fragment;
     }
@@ -74,11 +74,11 @@ public class ContactApi extends AsyncTask<String,String,String> {
         this.url = url;
     }
 
-    public BlankFragment getFragment() {
+    public ContactFragment getFragment() {
         return fragment;
     }
 
-    public void setFragment(BlankFragment fragment) {
+    public void setFragment(ContactFragment fragment) {
         this.fragment = fragment;
     }
 }

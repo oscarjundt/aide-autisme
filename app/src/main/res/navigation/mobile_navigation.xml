@@ -12,19 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.autisme.aide_autisme.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_video"
+        android:name="com.autisme.aide_autisme.ui.video.VideoFragment"
         android:label="@string/menu_video"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_video" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.autisme.aide_autisme.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_info"
+        android:name="com.autisme.aide_autisme.ui.info.InfoFragment"
         android:label="@string/menu_info"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_info" />
     <fragment
         android:id="@+id/nav_contact"
-        android:name="com.autisme.aide_autisme.ui.contact.BlankFragment"
+        android:name="com.autisme.aide_autisme.ui.contact.ContactFragment"
         android:label="Contact"
-        tools:layout="@layout/fragment_blank" />
+        tools:layout="@layout/fragment_contact" />
 </navigation>

@@ -11,11 +11,11 @@
             android:icon="@drawable/home"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_video"
             android:icon="@android:drawable/ic_media_play"
             android:title="@string/menu_video" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_info"
             android:icon="@android:drawable/ic_dialog_info"
             android:title="@string/menu_info" />
         <item  android:id="@+id/nav_contact"
