@@ -1,6 +1,7 @@
 package com.autisme.aide_autisme.ui.contact;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 
 import com.autisme.aide_autisme.R;
 import com.autisme.aide_autisme.TraitementHttp;
+import com.autisme.aide_autisme.Utils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -21,19 +23,19 @@ public class ContactApi extends AsyncTask<String,String,String> {
     private String url;
     private ContactFragment fragment;
     private ProgressDialog progressDialog;
+    private Context context;
 
     public ContactApi(String url, ContactFragment fragment){
         this.url = url;
         this.fragment = fragment;
+        this.context = fragment.getContext();
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        this.progressDialog = new ProgressDialog(this.fragment.getContext());
-        this.progressDialog.setMessage("en cours");
-        this.progressDialog.setCancelable(false);
-        this.progressDialog.show();
+        progressDialog = Utils.progressConfig(progressDialog,context);
+        progressDialog.show();
     }
 
     @Override
@@ -45,25 +47,25 @@ public class ContactApi extends AsyncTask<String,String,String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        Gson gson = new Gson();
-        Type listType = new TypeToken<List<Lien>>(){}.getType();
-        List<Lien> liens = gson.fromJson(s, listType);
         LinearLayout text = fragment.getActivity().findViewById(R.id.Lcontact);
-        for(Lien lien: liens){
-            Button tableRow = getTableRow(lien);
-            text.addView(tableRow);
-        }
+        traitmentPost(text,s);
+
         this.progressDialog.hide();
     }
 
-    private @NonNull Button getTableRow(Lien lien) {
-        Button button = new Button(this.fragment.getContext());
-        button.setText(lien.getTitre());
-        button.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(lien.getUrl()));
-            v.getContext().startActivity(browserIntent);
-        });
-        return button;
+    private void traitmentPost(LinearLayout text,String json){
+        try {
+            Gson gson = new Gson();
+            Type listType = new TypeToken<List<Lien>>() {
+            }.getType();
+            List<Lien> liens = gson.fromJson(json, listType);
+            for (Lien lien : liens) {
+                Button tableRow = Utils.getTableRow(context,lien.getTitre(),lien.getUrl());
+                text.addView(tableRow);
+            }
+        }catch (Exception e){
+            Utils.getPostError(text,fragment.getContext());
+        }
     }
 
     public String getUrl() {
